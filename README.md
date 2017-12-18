@@ -160,17 +160,83 @@ This is a pretty long handed explanation of this, but closure is a very importan
 
 ## Recursion
 
-Recursion is simply when a function calls itself. One thing to note is that in most cases problems you can solve with recursion you can also solve iteratively. However, both methods will have their trade offs. recursion usually offers elegant and also allows you to solve problems that require exploring or processing several branches. However, recursion is much more slower than it's counter part. e.a. loops.
+Recursion is simply when a function calls itself. One thing to note is that in most cases problems you can solve with recursion you can also solve iteratively. However, both methods will have their trade offs. recursion usually offers a elegant solution and also allows you to solve problems that require exploring or processing several branches. However, recursion is much more slower than it's counter part. e.a. loops.
 
-//
+Lets go through a quick example by writing a functions that returns n [factorial](https://en.wikipedia.org/wiki/Factorial).
 
-## Growing Functions
+```
+function factorial(n) {
+  if (n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
 
-## Functions and Side Effects
+console.log(factorial(5));
+```
+
+`factorial(5)` will log `120`; Note that the function `factorial(n - 1)` is called inside the `factorial()` function. The function calling itself makes this function a recursive function.
+
+Solving problems using recursion is not the easiest thing to do in the beginning. However, here are few tips to get you started.
+
+1. Think about the base case first. For our factorial problem, the base case is
+
+```
+if (n === 1) {
+  return 1;
+}
+```
+
+This just means that this is the last point at which the function will not call itself anymore.
+
+2. recursively call your function with the next value. This part is hard said then done. In our example it is `return n * factorial(n - 1)`. In Math to solve one step of the factorial problem, you multiply the currently number with the previous number.
+
+We will have more opportunities in the future to solve many recursive problems :) Look forward to it.
 
 ## Challenges
 
-1. Variable Functions
-2. My Scope Your Scope
-3. Fibonacci
-4. Refactor My Side Effect
+### Variable Functions:
+In this short challenge you will be required to define functions in multiple ways.
+
+Steps:
+1. Create a function with the name `myName` where you pass in the argument `name` and log the name to the console. Invoke the `myName` function.
+2. Assign a function to a variable name `favoriteFunc`. Invoke your `favoriteFunc`.
+3. Create a function `powerBy` with optional parameter that powers the base number by `2` by default. Try powering a number with the default value and also without.
+
+
+### My Scope Your Scope:
+We will be practicing going in and out of scopes. Remember scopes are very important to understand so take time to really make this understanding your own.
+
+There are some issues with the following code base. Things are not logging the way they should be. Fix the scope issues to get the problem to function as intended. You may need to change some argument names as well. Good Luck!
+
+```
+var a = 5;
+var b = 3;
+function getUserInput(aNum, bNum) {
+  console.log('value one is', a);
+  console.log('value two is', b);
+  function add(aNum, bNum) {
+    var a = aNum;
+    var b = bNum;
+
+    function checkNumber(a) {
+      if (typeof a === 'number') {
+        return a;
+      }
+      var sum = checkNumber(a) + checkNumber(b);
+    }
+    return sum;
+  }
+}
+return add(a, b);
+console.log(getUserInput(a, b));
+}
+```
+
+### Fibonacci:
+
+Follow this link to solve the Fibonacci Challenge: [LINK](https://github.com/SoulEncoded/FibonacciChallenge)
+
+### Refactor My Side Effect:
+
+Follow this link to solve the Refactor My Side Effects Challenge: [LINK](https://github.com/SoulEncoded/Refactor-My-Side-Effects-Challenge)
