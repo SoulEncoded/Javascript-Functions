@@ -233,14 +233,62 @@ console.log(getUserInput(a, b));
 }
 ```
 
+### Always be Closuring
+
+1. Fix the below loop to properly print out the i number in order. You must keep the setTimeout function
+
+```
+for (var i = 0; i < 3; i++) {
+  setTimeout(function() {
+    console.log(i);
+  }, 1000 + i);
+}
+```
+
+2. Create a closure that allows you to execute the below code and return the expected values
+
+```
+var addFive = createBase(5);
+addFive(2); // returns 7
+addFive(10); // returns 15
+```
+
 ### Fibonacci:
 
-Follow this link to solve the Fibonacci Challenge: [LINK](https://github.com/SoulEncoded/FibonacciChallenge)
+![Fibonacci](assets/fib.png)
 
-### Refactor My Side Effect:
+In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones
 
-Follow this link to solve the Refactor My Side Effects Challenge: [LINK](https://github.com/SoulEncoded/Refactor-My-Side-Effects-Challenge)
+The sequence would look something like this.
 
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
+
+below is the iterative version of the Fibonacci sequence.
+
+Your challenge is to write it in a recursive manner. :)
+
+```
+function iterativeFibonacci (n) {
+  // default values for the first fib sequence 0, 1, 1
+  var a = 0;
+  var b = 1;
+  var c = 1;
+
+  for (var i = 2; i <= n; i++) {
+    // calculate the next Fibonacci sequence
+    c = a + b;
+    // update the base of a up one number
+    a = b;
+    // update the base of b to the new sequence
+    b = c;
+  }
+  return c;
+}
+
+console.log(iterativeFibonacci(10));
+```
+
+Try your best to figure this out on your own, but you can always look it up. Just make sure you understand how what the base case is and the specific algorithm that you are recursively calling!.
 
 ### Additional Resources
 Kyle Simpsons Article on Lexical Scope and Closures: https://medium.com/@nickbalestra/javascripts-lexical-scope-hoisting-and-closures-without-mystery-c2324681d4be
