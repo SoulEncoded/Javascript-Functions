@@ -104,7 +104,7 @@ Although this is possible I would advise against using this pattern. Instead mak
 
 ## The Call Stack
 
-I feel like the call stack is important enough to warrant its own section. For now I've linked a Youtube video that I believe is worth watching:
+I feel like the call stack is important enough to warrant its own section. For now I've linked a Youtube video that I believe is worth watching: https://www.youtube.com/watch?v=8aGhZQkoFbQ The entire video is about how Javascript works, but the callstack portion starts around 4:10
 
 ## Optional arguments
 
@@ -240,3 +240,7 @@ Follow this link to solve the Fibonacci Challenge: [LINK](https://github.com/Sou
 ### Refactor My Side Effect:
 
 Follow this link to solve the Refactor My Side Effects Challenge: [LINK](https://github.com/SoulEncoded/Refactor-My-Side-Effects-Challenge)
+
+
+### Additional Resources
+Kyle Simpsons Article on Lexical Scope and Closures: https://medium.com/@nickbalestra/javascripts-lexical-scope-hoisting-and-closures-without-mystery-c2324681d4be
